@@ -1,18 +1,22 @@
 
-// import { useState } from 'react';
+import { useContext } from 'react';
 import './App.css';
-// import UseStateExample from './pages/UseStateExample.tsx';
-// import UseReducer from './pages/UseReducer.tsx';
-import UseRefExample from './pages/UseRefExample';
-
+import { ThemeContext } from './context/ThemeProvider';
+// import UseRefExample from './pages/UseRefExample';
 function App() {
-  // const [counter, setCounter] = useState(0)
+  const { dark, setDark } = useContext(ThemeContext)
+  console.log(dark)
   return (
-    <div>
+    <div className={`${dark ? "bg-black" : "bg-white"}`}>
+      <button
+        className='btn border-t-cyan-100'
+        onClick={() => setDark(!dark)}>
+        Toggole
+      </button>
       {/* <UseStateExample counter={counter} setCounter={setCounter} /> */}
       {/* <UseReducer></UseReducer> */}
       {/* <UseEffect></UseEffect> */}
-      <UseRefExample />
+      {/* <UseRefExample/> */}
     </div>
   )
 }
