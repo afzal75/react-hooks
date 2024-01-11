@@ -1,10 +1,11 @@
 
 import { useContext } from 'react';
 import './App.css';
-import { ThemeContext } from './context/ThemeProvider';
+import { MenuItem, MenuList } from './components/Menu';
+import { TThemeContexts, ThemeContext } from './context/ThemeProvider';
 // import UseRefExample from './pages/UseRefExample';
 function App() {
-  const { dark, setDark } = useContext(ThemeContext)
+  const { dark, setDark } = useContext(ThemeContext) as TThemeContexts
   console.log(dark)
   return (
     <div className={`${dark ? "bg-black" : "bg-white"}`}>
@@ -13,10 +14,9 @@ function App() {
         onClick={() => setDark(!dark)}>
         Toggole
       </button>
-      {/* <UseStateExample counter={counter} setCounter={setCounter} /> */}
-      {/* <UseReducer></UseReducer> */}
-      {/* <UseEffect></UseEffect> */}
-      {/* <UseRefExample/> */}
+      <MenuList>
+        <MenuItem></MenuItem>
+      </MenuList>
     </div>
   )
 }

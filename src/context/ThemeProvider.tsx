@@ -1,13 +1,13 @@
 import React, { Dispatch, ReactNode, createContext, useState } from "react";
 
 
-type TThemeContexts = {
+export type TThemeContexts = {
     dark: boolean;
     setDark: Dispatch<React.SetStateAction<boolean>>
 }
 
-export const ThemeContext = 
-createContext<TThemeContexts | undefined>(undefined)
+export const ThemeContext =
+    createContext<TThemeContexts | undefined>(undefined)
 
 
 
@@ -15,7 +15,7 @@ type TThemeProviderProps = {
     children: ReactNode;
 }
 
-const ThemeProvider =({ children }: TThemeProviderProps) => {
+const ThemeProvider = ({ children }: TThemeProviderProps) => {
 
     const [dark, setDark] = useState(false)
 
