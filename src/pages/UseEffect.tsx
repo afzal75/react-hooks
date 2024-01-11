@@ -22,11 +22,17 @@ const UseEffect = () => {
 
     return (
         <div>
-            <input className="border border-green-950" onBlur={(e) => setUser({ ...user, name: e.target.value })} type="text"
+            <input
+                className="border border-green-950"
+                onBlur={(e) => setUser({ ...user, name: e.target.value })}
+                type="text"
                 name="name"
                 id="name"
             />
-            <input className="border border-red-700" onBlur={(e) => setUser({ ...user, email: e.target.value })} type="text"
+            <input
+                className="border border-red-700"
+                onBlur={(e) => setUser({ ...user, email: e.target.value })}
+                type="text"
                 name="email"
                 id="email"
             />
